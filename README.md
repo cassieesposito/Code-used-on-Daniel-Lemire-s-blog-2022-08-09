@@ -11,3 +11,6 @@ My concerns, as I wrote them in an as-of-yet-not-approved comment on the post:
 >I might be back later with followup results.
 
 Obviously, I'm now back with results. I was surprised. I have since seen some critique of this blog post that suggest the difference may specifically be between the stdio.h and iostream APIs specifically, rather than anything to do with the language as a whole and that [c++ has some alternative IO apis](https://github.com/fmtlib/fmt#speed-tests) that may run faster than stdio.h.
+
+The Results:
+{{RESULTS.md}}

@@ -1,0 +1,61 @@
+```
+cc -O2 -o helloc hello.c -Wall
+c++ -O2 -o hellocpp hello.cpp -Wall
+c++ -O2 -o hellocppstatic hello.cpp -Wall -static-libstdc++
+c++ -O2 -o hellocppfullstatic hello.cpp -Wall -static-libstdc++ -static-libgcc
+cc -O2 -o multi_helloc multi_hello.c -Wall
+c++ -O2 -o multi_hellocpp multi_hello.cpp -Wall
+c++ -O2 -o multi_hellocppstatic multi_hello.cpp -Wall -static-libstdc++
+c++ -O2 -o multi_hellocppfullstatic multi_hello.cpp -Wall -static-libstdc++ -static-libgcc
+hyperfine -N --runs 5000 ./helloc
+Benchmark 1: ./helloc
+  Time (mean ± σ):       0.3 ms ±   0.1 ms    [User: 0.3 ms, System: 0.0 ms]
+  Range (min … max):     0.2 ms …   1.7 ms    5000 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (0.5 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+hyperfine -N --runs 5000 ./hellocpp
+Benchmark 1: ./hellocpp
+  Time (mean ± σ):       1.0 ms ±   0.0 ms    [User: 0.8 ms, System: 0.1 ms]
+  Range (min … max):     0.9 ms …   2.2 ms    5000 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (1.2 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+hyperfine -N --runs 5000 ./hellocppstatic
+Benchmark 1: ./hellocppstatic
+  Time (mean ± σ):       0.5 ms ±   0.0 ms    [User: 0.4 ms, System: 0.0 ms]
+  Range (min … max):     0.5 ms …   2.1 ms    5000 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (0.6 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+hyperfine -N --runs 5000 ./hellocppfullstatic
+Benchmark 1: ./hellocppfullstatic
+  Time (mean ± σ):       0.4 ms ±   0.0 ms    [User: 0.4 ms, System: 0.0 ms]
+  Range (min … max):     0.4 ms …   0.8 ms    5000 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (0.6 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+hyperfine -N --runs 5000 ./multi_helloc
+Benchmark 1: ./multi_helloc
+  Time (mean ± σ):       1.0 ms ±   0.0 ms    [User: 0.9 ms, System: 0.1 ms]
+  Range (min … max):     1.0 ms …   2.3 ms    5000 runs
+ 
+  Warning: The first benchmarking run for this command was significantly slower than the rest (1.1 ms). This could be caused by (filesystem) caches that were not filled until after the first run. You should consider using the '--warmup' option to fill those caches before the actual benchmark. Alternatively, use the '--prepare' option to clear the caches before each timing run.
+ 
+hyperfine -N --runs 5000 ./multi_hellocpp
+Benchmark 1: ./multi_hellocpp
+  Time (mean ± σ):      11.0 ms ±   0.6 ms    [User: 5.3 ms, System: 5.6 ms]
+  Range (min … max):     5.7 ms …  13.5 ms    5000 runs
+ 
+  Warning: Statistical outliers were detected. Consider re-running this benchmark on a quiet PC without any interferences from other programs. It might help to use the '--warmup' or '--prepare' options.
+ 
+hyperfine -N --runs 5000 ./multi_hellocppstatic
+Benchmark 1: ./multi_hellocppstatic
+  Time (mean ± σ):      10.1 ms ±   0.2 ms    [User: 4.5 ms, System: 5.5 ms]
+  Range (min … max):     9.6 ms …  12.4 ms    5000 runs
+ 
+hyperfine -N --runs 5000 ./multi_hellocppfullstatic
+Benchmark 1: ./multi_hellocppfullstatic
+  Time (mean ± σ):      10.0 ms ±   0.2 ms    [User: 4.5 ms, System: 5.5 ms]
+  Range (min … max):     9.5 ms …  11.3 ms    5000 runs
+```
